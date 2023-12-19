@@ -1,0 +1,29 @@
+{
+    "name": "port_model",
+    "federates": [
+        {
+            "directory": ".",
+            "exec": "helics_broker -f5",
+            "host": "localhost",
+            "name": "port_broker"
+          },
+      {
+        "directory": ".",
+        "exec": "python -u port",
+        "host": "localhost",
+        "name": "port"
+      },
+      {
+        "directory": ".",
+        "exec": "python -u visualization.py 1",
+        "host": "localhost",
+        "name": "vis"
+      },
+      {
+        "directory": ".",
+        "exec": "python -u threat.py",
+        "host": "localhost",
+        "name": "threat"
+      }
+    ]
+  }
