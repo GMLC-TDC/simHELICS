@@ -79,7 +79,7 @@ Versions prior to Matlab 2015 will require more extensive modifications. And may
 
 ## Source Repo
 
-The simHELICS source code is hosted on GitHub: [https://github.com/GMLC-TDC/simHelics](https://github.com/GMLC-TDC/simHELICS) 
+The simHELICS source code is hosted on GitHub: [https://github.com/GMLC-TDC/simHelics](https://github.com/GMLC-TDC/simHELICS)
 
 ## Citation
 
