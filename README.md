@@ -27,14 +27,14 @@ this will generate the helics interface in a folder 1 level above the simHELICS 
 >> buildSimHELICS();
 ```
 
-The `buildSimHELICS` function also has an option to generate the package file. This can be used to generate a package that can be transfered to a similar system.
+The `buildSimHELICS` function also has an option to generate the package file. This can be used to generate a package that can be transferred to a similar system.
 
 This is a new process for building a simulink interface, it is tested but not extensively and not on a large variety of platforms if you run into issues please let us know.
 
 ### Requirements
 
 Matlab 2018a or greater.
-intalled compatible compiler to build the mex file
+installed compatible compiler to build the mex file
 
 ### building with custom HELICS version
 
@@ -53,17 +53,17 @@ These simulink blocks are in a simHELICS.slx library object and can be loaded or
 
 ### federate block
 
-The federate block takes 1 parameter which is the name of a config file. This config file is typically json, but other formats including a direct string input is allowed. This configuration json is the only means of configuring the federate in simulink. All interfaces should be specified in this configuraiton file.
+The federate block takes 1 parameter which is the name of a config file. This config file is typically json, but other formats including a direct string input is allowed. This configuration json is the only means of configuring the federate in simulink. All interfaces should be specified in this configuration file.
 
 ### input block
 
-The input block is used to retreive data from HELICS. It takes two parameters. The first is an integer or string with the input index(zero based) or name resepectively, and some arguments as a string as the second argument. Allowed arguments are 'output_size=X', and 'output_type=XXXX'. These define the size and type of the simulink output on the block. Default for an empty string is 1, and double. 'double','int', 'bool', and 'complex' are supported along with 'vector' and 'complex_vector'. The HELICS interface type is defined in the configuration. This is defining the desired output type in simulink.
+The input block is used to retrieve data from HELICS. It takes two parameters. The first is an integer or string with the input index(zero based) or name respectively, and some arguments as a string as the second argument. Allowed arguments are 'output_size=X', and 'output_type=XXXX'. These define the size and type of the simulink output on the block. Default for an empty string is 1, and double. 'double','int', 'bool', and 'complex' are supported along with 'vector' and 'complex_vector'. The HELICS interface type is defined in the configuration. This is defining the desired output type in simulink.
 
 The input_block is wired to the helics_federate block.
 
 ### Publication block
 
-The publication block is used to send data via HELICS. The first is an integer or string with the publication index(zero based) or name resepectively, and some arguments as a string as the second argument. Allowed arguments are 'input_size=X', and 'input_type=XXXX'. These define the size and type of the second simulink input on the block. Default for an empty string argument is 1, and double. 'double','int', 'bool', and 'complex' are supported along with 'vector' and 'complex_vector'. The HELICS interface type is defined in the configuration. This is defining the desired input type and size in simulink.
+The publication block is used to send data via HELICS. The first is an integer or string with the publication index(zero based) or name respectively, and some arguments as a string as the second argument. Allowed arguments are 'input_size=X', and 'input_type=XXXX'. These define the size and type of the second simulink input on the block. Default for an empty string argument is 1, and double. 'double','int', 'bool', and 'complex' are supported along with 'vector' and 'complex_vector'. The HELICS interface type is defined in the configuration. This is defining the desired input type and size in simulink.
 
 The publication is block is wired to the helics_federate block and the data wishing to be published.
 
