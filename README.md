@@ -90,3 +90,7 @@ T. Hardy, B. Palmintier, P. Top, D. Krishnamurthy and J. Fuller, "HELICS: A Co-S
 
 HELICS, simHELICS and many associated repositories are distributed under the terms of the BSD-3 clause license. All new
 contributions must be made under this license. [LICENSE](LICENSE)
+
+SPDC-License-Identifier: BSD-3-Clause
+
+Portions of the code written by LLNL with release number LLNL-CODE-866414
