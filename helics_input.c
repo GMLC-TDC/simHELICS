@@ -44,7 +44,7 @@ static void mdlInitializeSizes(SimStruct *S)
         {
             dataType=helicsGetDataType(token+12);
             ssPrintf("got token output_type read as %s converted to %d\n",token+12,dataType);
-            
+
         }
         token=strtok(NULL," ,");
     }
@@ -65,7 +65,7 @@ static void mdlInitializeSizes(SimStruct *S)
             //something with complex indications
             break;
     }
-    
+
     ssSetInputPortRequiredContiguous(S,0,1);
     /* sample times */
     ssSetNumSampleTimes(   S, 1 );
@@ -84,7 +84,7 @@ static void mdlInitializeSampleTimes(SimStruct *S)
 #define MDL_START
 void mdlStart(SimStruct *S)
 {
-    
+
 
 }
 
@@ -177,7 +177,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
                         for (ii=sz;ii<width;++ii)
                         {
                             y[ii]=HELICS_INVALID_PROPERTY_VALUE;
-                        }   
+                        }
                         }
                     }
                 }
@@ -188,7 +188,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
                     real_T *y = ssGetOutputPortRealSignal(S,0);
                     y[0]=val;
                 }
-                
+
             }
             break;
         case SS_BOOLEAN:
@@ -199,12 +199,12 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 #define MDL_UPDATE
 void mdlUpdate(SimStruct *S, int_T tid)
 {
-     
+
 }
 
 static void mdlTerminate(SimStruct *S)
 {
-    
+
 
 }
 
