@@ -27,11 +27,11 @@ static void mdlInitializeSizes(SimStruct *S)
 
     ssSetNumSampleTimes(S, 1);
 
-    
+
     /* Set this S-function as runtime thread-safe for multicore execution */
     ssSetRuntimeThreadSafetyCompliance(S, RUNTIME_THREAD_SAFETY_COMPLIANCE_TRUE);
     ssSetOptions(S,SS_OPTION_CALL_TERMINATE_ON_EXIT);
-    
+
     ssSetNumDWork(S,2);
     ssSetDWorkDataType(S, 0, SS_DOUBLE);
     ssSetDWorkDataType(S, 1, SS_BOOLEAN);
@@ -43,7 +43,7 @@ static void mdlInitializeSizes(SimStruct *S)
 
 static void mdlInitializeSampleTimes(SimStruct *S)
 {
-    
+
     ssSetSampleTime(S, 0, VARIABLE_SAMPLE_TIME);
 }
 
@@ -51,8 +51,8 @@ static void mdlInitializeSampleTimes(SimStruct *S)
 static void mdlGetTimeOfNextVarHit(SimStruct *S)
   {
     real_T *timing = (real_T*) ssGetDWork(S,0);
-  	time_T timeOfNextHit = timing[0] + timing[2];
-  	ssSetTNext(S, timeOfNextHit);
+    time_T timeOfNextHit = timing[0] + timing[2];
+    ssSetTNext(S, timeOfNextHit);
   }
 
 #define MDL_START
