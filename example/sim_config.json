@@ -1,7 +1,7 @@
 {
   "name": "fedb",
   "coreType": "inproc",
-  "autobroker":true,
+  "autobroker": true,
   "period": 0.01,
   "uninterruptible": true,
   "wait_for_current_time_update": false,
