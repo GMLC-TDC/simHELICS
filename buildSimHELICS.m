@@ -59,7 +59,7 @@ function buildSimHELICS(targetPath,makePackage)
     end
     %actually build the mex file
     fprintf('building helics mex target\n');
-   
+
    mex('-lhelics','-R2018a',['-I',basePath,'/include/'],['-L',basePath,'/lib'],['LDFLAGS=$LDFLAGS -Wl,-rpath,$ORIGIN/lib,-rpath,',basePath,'/lib',',-rpath,',basePath,'/lib64'],fullfile(inputPath,'helics_federate.c'),'-outdir',targetPath);
    mex('-lhelics','-R2018a',['-I',basePath,'/include/'],['-L',basePath,'/lib'],['LDFLAGS=$LDFLAGS -Wl,-rpath,$ORIGIN/lib,-rpath,',basePath,'/lib',',-rpath,',basePath,'/lib64'],fullfile(inputPath,'helics_input.c'),'-outdir',targetPath);
       mex('-lhelics','-R2018a',['-I',basePath,'/include/'],['-L',basePath,'/lib'],['LDFLAGS=$LDFLAGS -Wl,-rpath,$ORIGIN/lib,-rpath,',basePath,'/lib',',-rpath,',basePath,'/lib64'],fullfile(inputPath,'helics_publication.c'),'-outdir',targetPath);
@@ -108,7 +108,7 @@ function buildSimHELICS(targetPath,makePackage)
     %copy the needed dll file if on windows
     if ispc
       if (~exist(fullfile(targetPath,targetFile),'file'))
-        
+
           copyfile(fullfile(basePath,'bin',targetFile),fullfile(targetPath,targetFile));
           copyfile(fullfile(basePath,'bin','*.dll'),targetPath);
       end
@@ -118,7 +118,7 @@ function buildSimHELICS(targetPath,makePackage)
   end
   %% now build the interface directory and copy files
   fprintf('copying required files\n');
-  
+
   % copy the include directory with the C headers
   if (~exist(fullfile(targetPath,'include'),'dir'))
     mkdir(fullfile(targetPath,'include'));
@@ -137,7 +137,7 @@ function buildSimHELICS(targetPath,makePackage)
   else
     copyfile(fullfile(basePath,'bin'),fullfile(targetPath,'bin'));
   end
-  
+
   if (makePackage)
     fprintf('generating helics simulink binary package file\n');
     rmdir(basePath,'s');
@@ -150,6 +150,3 @@ function buildSimHELICS(targetPath,makePackage)
       warning('unrecognized platform for making package');
     end
   end
-
-
-
