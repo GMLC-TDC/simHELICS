@@ -45,7 +45,7 @@ static void mdlInitializeSizes(SimStruct *S)
         {
             dataType=helicsGetDataType(token+11);
             ssPrintf("got token input_type read as %s converted to %d\n",token+11,dataType);
-            
+
         }
         token=strtok(NULL," ,");
     }
@@ -91,7 +91,7 @@ static void mdlInitializeSampleTimes(SimStruct *S)
 #define MDL_START
 void mdlStart(SimStruct *S)
 {
-    
+
 }
 
 
@@ -144,7 +144,7 @@ void mdlInitializeConditions(SimStruct *S)
 
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-    
+
 }
 
 #define MDL_UPDATE
@@ -169,7 +169,7 @@ void mdlUpdate(SimStruct *S, int_T tid)
             {
                 const double *sig = ssGetInputPortRealSignal(S,1);
                 ssPrintf("publishing double %f\n",sig[0]-1.0);
-                
+
                 helicsPublicationPublishDouble(pub,sig[0]-1.0,NULL);
                 ssPrintf("published double\n");
             }
@@ -181,7 +181,7 @@ void mdlUpdate(SimStruct *S, int_T tid)
 
 static void mdlTerminate(SimStruct *S)
 {
-    
+
 
 }
 
